@@ -4,7 +4,7 @@ This repository documents my structured Data Structures & Algorithms journey usi
 
 📅 Started On: 17/02/2026  
 👨‍💻 Language: Java  
-📌 Repository: DSA_JAVA_JOURNEY_SONU  
+📌 Repository: My_DSA_Journey_17-02-2026 
 
 ---
 
