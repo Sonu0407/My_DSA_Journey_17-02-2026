@@ -15,7 +15,7 @@ public class cyclic_sort_algo {
         for (int i = 0; i < arr.length; i++) {
             int check = arr[i] - 1;
             if (arr[i] != arr[check]) {
-                swap(arr, arr[i], arr[check]);
+                swap(arr, i, check);
             }
         }
     }

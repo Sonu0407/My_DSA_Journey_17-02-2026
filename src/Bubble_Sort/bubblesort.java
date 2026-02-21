@@ -17,7 +17,6 @@ public class bubblesort {
             for (int j = 1; j < arr.length - i; j++) {
                 // now compare the values
                 if (arr[j] < arr[j-1]){ // example if arr[j] = 2 < arr[j-1] = 5 // i will write like this
-                    // arr[j+1] > arr[j] if arr = 1, 2, 5 if 5 > 2 then swap both works
                     // now swap it
                     int temp = arr[j];
                     arr[j] = arr[j-1];
