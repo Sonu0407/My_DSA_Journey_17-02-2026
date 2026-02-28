@@ -3,7 +3,7 @@ package Binary_Search;
 public class FloorProblem {
     public static void main(String[] args) {
         int[] arr = {2, 3, 5, 9, 14, 16, 18};
-        int target = 15;
+        int target = 14;
         int ans = find_the_floor_number(arr, target);
         System.out.println(ans);
 

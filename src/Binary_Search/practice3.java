@@ -2,8 +2,10 @@ package Binary_Search;
 
 public class practice3 {
     public static void main(String[] args) {
-        int n = 10;
+        int n = 2147395600;
         int ans = findSqaureRoot(n);
+        int result = floorSqrt(2147395600);
+        System.out.println(result);
         System.out.println(ans);
 
 
@@ -17,7 +19,7 @@ public class practice3 {
         return i-1;
     }
 
-    int floorSqrt(int n) {
+    static int floorSqrt(int n) {
         // code here
         int i = 2;
         while ((i * i) <= n) {
