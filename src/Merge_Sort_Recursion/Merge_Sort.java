@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class Merge_Sort {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
-        mergeSort(arr);
+        int[] arr = {4, 5, 2, 3, 1};
+//        int[] arr = {5,1,1,2,0,0};
+        merge_sort_Inplace(arr, 0, arr.length);
         System.out.println(Arrays.toString(arr));
 
     }
@@ -47,13 +48,13 @@ public class Merge_Sort {
         // it may be possible that one of arrays is not complete
         // copy the remaining elements
 
-        while (i > first.length) {
+        while (i < first.length) {
             mix[k] = first[i];
             i++;
             k++;
         }
 
-        while (j > second.length) {
+        while (j < second.length) {
             mix[k] = second[j];
             j++;
             k++;
@@ -61,4 +62,54 @@ public class Merge_Sort {
 
         return mix;
     }
+
+
+    static void merge_sort_Inplace(int[] arr, int s, int e) {
+        if (e - s == 1) {
+            return;
+        }
+
+        int mid = (s + e) / 2;
+
+        merge_sort_Inplace(arr, s, mid);
+        merge_sort_Inplace(arr, mid, e);
+
+        mergeInplace(arr, s, mid, e);
+    }
+
+    private static void mergeInplace(int[] arr, int s, int mid, int e) {
+        int[] mix = new int[e - s];
+
+        int i = s;
+        int j = mid;
+        int k = 0;
+
+        while (i < mid && j < e) {
+            if (arr[i] < arr[j]) {
+                mix[k] = arr[i];
+                i++;
+            } else {
+                mix[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < mid) {
+            mix[k] = arr[i];
+            i++;
+            k++;
+        }
+
+        while (j < e) {
+            mix[k] = arr[j];
+            j++;
+            k++;
+        }
+
+        for (int l = 0; l < mix.length; l++) {
+            arr[s + l] = mix[l];
+        }
+    }
+
 }
